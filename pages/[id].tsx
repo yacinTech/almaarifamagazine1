@@ -69,7 +69,7 @@ export default function ArticlePage() {
         <meta property="og:description" content={article.content.slice(0, 150)} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={shareUrl} />
-        <meta property="og:image" content={article.image || `${baseUrl}/default.jpg`} />
+        <meta property="og:image" content={article.image || `${imageUrl}/default.jpg`} />
         <meta property="og:image:alt" content={`صورة عن ${article.title}`} />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />

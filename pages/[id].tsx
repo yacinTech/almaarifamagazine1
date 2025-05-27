@@ -42,13 +42,10 @@ export default function ArticlePage() {
 
   // بناء رابط المشاركة ديناميكياً بناءً على عنوان ورابط المقال
   const baseUrl = typeof window !== "undefined" ? window.location.origin : "http://localhost:3000";
-  const shareUrl = `${baseUrl}/articles/${article._id}`;
+  const shareUrl = `${baseUrl}/article/${article._id}`;
 
-  const imageUrl = article.image
-  ? article.image.startsWith("http")
-    ? article.image
-    : `${baseUrl}${article.image}`
-  : `${baseUrl}/default.jpg`;
+  const imageUrl = article.image || `${baseUrl}/default.jpg`;
+
 
 
 
@@ -71,10 +68,11 @@ export default function ArticlePage() {
             <meta property="og:url" content={shareUrl} />
 
             {/* إعداد رابط الصورة للـ OG */}
-            <meta
+           <meta
               property="og:image"
-              content={article.image?.startsWith("http") ? article.image : `${baseUrl}/uploads/${article.image || "default.jpg"}`}
+              content={article.image || `${baseUrl}/default.jpg`}
             />
+
             <meta property="og:image:alt" content={`صورة عن ${article.title}`} />
             <meta property="og:image:type" content="image/jpeg" />
             <meta property="og:image:width" content="1200" />
@@ -86,8 +84,9 @@ export default function ArticlePage() {
             <meta name="twitter:description" content={article.content.slice(0, 150)} />
             <meta
               name="twitter:image"
-              content={article.image?.startsWith("http") ? article.image : `${baseUrl}/uploads/${article.image || "default.jpg"}`}
+              content={article.image || `${baseUrl}/default.jpg`}
             />
+
           </Head>
 
 

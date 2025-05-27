@@ -87,7 +87,7 @@ const styles = {
     top: 0,
     zIndex: 1000,
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-    direction: "rtl",
+    direction: "rtl" as "rtl",
   },
   logoContainer: {
     display: "flex",
@@ -123,7 +123,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     gap: "10px",
-    direction: "rtl",
+    direction: "rtl" as const,
   },
   navItem: {
     transition: "transform 0.2s ease, background 0.3s ease",
@@ -144,7 +144,7 @@ const styles = {
     gap: "15px",
   },
   mobileNav: {
-    position: "absolute",
+    position: "absolute" as const,
     top: "70px",
     right: "20px",
     backgroundColor: "#1e40af",

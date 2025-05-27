@@ -36,7 +36,7 @@ export default function Header() {
   };
 
   return (
-    <header style={styles.header}>
+    <header dir="rtl" style={styles.header}>
       <div style={styles.logoContainer}>
         <Link href="/" legacyBehavior>
           <a style={styles.logoLink}>
@@ -87,7 +87,7 @@ const styles = {
     top: 0,
     zIndex: 1000,
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-    direction: "rtl" as const,
+    
   },
   logoContainer: {
     display: "flex",

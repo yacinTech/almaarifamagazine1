@@ -42,7 +42,8 @@ export default function ArticlePage() {
 
   // بناء رابط المشاركة ديناميكياً بناءً على عنوان ورابط المقال
   const baseUrl = typeof window !== "undefined" ? window.location.origin : "http://localhost:3000";
-  const shareUrl = `${baseUrl}/${article._id}`;
+  const shareUrl = `${baseUrl}/articles/${article._id}`;
+
   const encodedTitle = encodeURIComponent(article.title);
 
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodeURIComponent(shareUrl)}`;
@@ -51,28 +52,35 @@ export default function ArticlePage() {
 
   return (
     <>
-      <Head>
-        <title>{article.title}</title>
-        <meta name="description" content={article.content.slice(0, 150)} />
+        <Head>
+          <title>{article.title}</title>
+          <meta name="description" content={article.content.slice(0, 150)} />
 
-        {/* Open Graph */}
-        <meta property="og:title" content={article.title} />
-        <meta property="og:image" content="logo.png" />
-        <meta property="og:description" content={article.content.slice(0, 150)} />
-        <meta property="og:type" content="article" />
-        {article.image && (
-          <>
-            <meta property="og:image" content={article.image} />
-            <meta property="og:image:alt" content={`صورة عن ${article.title}`} />
-          </>
-        )}
+          {/* Open Graph */}
+          <meta property="og:title" content={article.title} />
+          <meta property="og:description" content={article.content.slice(0, 150)} />
+          <meta property="og:type" content="article" />
+          <meta property="og:url" content={shareUrl} />
 
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={article.title} />
-        <meta name="twitter:description" content={article.content.slice(0, 150)} />
-        {article.image && <meta name="twitter:image" content={article.image} />}
-      </Head>
+          <meta
+            property="og:image"
+            content={article.image || `${baseUrl}/default.jpg`} // fallback عند غياب صورة
+          />
+          <meta
+            property="og:image:alt"
+            content={`صورة عن ${article.title}`}
+          />
+          <meta property="og:image:type" content="image/jpeg" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+
+          {/* Twitter Card */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={article.title} />
+          <meta name="twitter:description" content={article.content.slice(0, 150)} />
+          <meta name="twitter:image" content={article.image || `${baseUrl}/default.jpg`} />
+        </Head>
+
 
       <Header />
 

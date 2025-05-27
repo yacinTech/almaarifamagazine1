@@ -83,7 +83,7 @@ const styles = {
     alignItems: "center",
     backgroundColor: "#1e40af",
     padding: "10px 20px",
-    position: "sticky",
+    position: "sticky" as const,
     top: 0,
     zIndex: 1000,
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
@@ -144,7 +144,7 @@ const styles = {
     gap: "15px",
   },
   mobileNav: {
-    position: "absolute",
+    position: "absolute" as const,
     top: "70px",
     right: "20px",
     backgroundColor: "#1e40af",
@@ -152,4 +152,4 @@ const styles = {
     padding: "15px",
     boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
   },
-};
+} as const;

@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { GetServerSideProps } from "next";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import Header from "../components/Header";
 import { fetchArticleById } from "../lib/api";
 import { FaTwitter, FaFacebookF, FaWhatsapp } from "react-icons/fa";
@@ -14,40 +13,22 @@ type Article = {
   createdAt: string;
 };
 
-export default function ArticlePage() {
-  const router = useRouter();
-  const { id } = router.query;
+type Props = {
+  article: Article | null;
+};
 
-  const [article, setArticle] = useState<Article | null>(null);
-  const [loading, setLoading] = useState(true);
+export default function ArticlePage({ article }: Props) {
+  if (!article) {
+    return <p style={{ textAlign: "center", marginTop: 40 }}>لم يتم العثور على المقال.</p>;
+  }
 
-  useEffect(() => {
-    if (!id) return;
-    async function loadArticle() {
-      try {
-        const data = await fetchArticleById(id as string);
-        setArticle(data);
-      } catch (error) {
-        console.error(error);
-        setArticle(null);
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadArticle();
-  }, [id]);
+  const baseUrl =
+    typeof window !== "undefined"
+      ? window.location.origin
+      : process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
-  if (loading) return <p style={{ textAlign: "center", marginTop: 40 }}>جاري التحميل...</p>;
-  if (!article) return <p style={{ textAlign: "center", marginTop: 40 }}>لم يتم العثور على المقال.</p>;
-
-  // بناء رابط المشاركة ديناميكياً بناءً على عنوان ورابط المقال
-  const baseUrl = typeof window !== "undefined" ? window.location.origin : "http://localhost:3000";
-  const shareUrl = `${baseUrl}/article/${article._id}`;
-
+  const shareUrl = `${baseUrl}/${article._id}`;
   const imageUrl = article.image || `${baseUrl}/default.jpg`;
-
-
-
 
   const encodedTitle = encodeURIComponent(article.title);
 
@@ -57,38 +38,27 @@ export default function ArticlePage() {
 
   return (
     <>
-          <Head>
-            <title>{article.title}</title>
-            <meta name="description" content={article.content.slice(0, 150)} />
+      <Head>
+        <title>{article.title}</title>
+        <meta name="description" content={article.content.slice(0, 150)} />
 
-            {/* Open Graph meta tags */}
-            <meta property="og:title" content={article.title} />
-            <meta property="og:description" content={article.content.slice(0, 150)} />
-            <meta property="og:type" content="article" />
-            <meta property="og:url" content={shareUrl} />
+        {/* Open Graph meta tags */}
+        <meta property="og:title" content={article.title} />
+        <meta property="og:description" content={article.content.slice(0, 150)} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={shareUrl} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:alt" content={`صورة عن ${article.title}`} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
-            {/* إعداد رابط الصورة للـ OG */}
-           <meta
-              property="og:image"
-              content={article.image || `${baseUrl}/default.jpg`}
-            />
-
-            <meta property="og:image:alt" content={`صورة عن ${article.title}`} />
-            <meta property="og:image:type" content="image/jpeg" />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="630" />
-
-            {/* Twitter Card */}
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={article.title} />
-            <meta name="twitter:description" content={article.content.slice(0, 150)} />
-            <meta
-              name="twitter:image"
-              content={article.image || `${baseUrl}/default.jpg`}
-            />
-
-          </Head>
-
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={article.title} />
+        <meta name="twitter:description" content={article.content.slice(0, 150)} />
+        <meta name="twitter:image" content={imageUrl} />
+      </Head>
 
       <Header />
 
@@ -171,3 +141,19 @@ export default function ArticlePage() {
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { id } = context.params!;
+
+  try {
+    const article = await fetchArticleById(id as string);
+    if (!article) {
+      return { notFound: true };
+    }
+    return {
+      props: { article },
+    };
+  } catch (error) {
+    return { notFound: true };
+  }
+};

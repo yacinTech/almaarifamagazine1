@@ -60,27 +60,35 @@ export default function ArticlePage() {
 
   return (
     <>
-       <Head>
-        <title>{article.title}</title>
-        <meta name="description" content={article.content.slice(0, 150)} />
+          <Head>
+            <title>{article.title}</title>
+            <meta name="description" content={article.content.slice(0, 150)} />
 
-        {/* Open Graph */}
-        <meta property="og:title" content={article.title} />
-        <meta property="og:description" content={article.content.slice(0, 150)} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={shareUrl} />
-        <meta property="og:image" content={article.image || `${imageUrl}/default.jpg`} />
-        <meta property="og:image:alt" content={`صورة عن ${article.title}`} />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+            {/* Open Graph meta tags */}
+            <meta property="og:title" content={article.title} />
+            <meta property="og:description" content={article.content.slice(0, 150)} />
+            <meta property="og:type" content="article" />
+            <meta property="og:url" content={shareUrl} />
 
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={article.title} />
-        <meta name="twitter:description" content={article.content.slice(0, 150)} />
-        <meta name="twitter:image" content={article.image || `${baseUrl}/default.jpg`} />
-      </Head>
+            {/* إعداد رابط الصورة للـ OG */}
+            <meta
+              property="og:image"
+              content={article.image?.startsWith("http") ? article.image : `${baseUrl}/uploads/${article.image || "default.jpg"}`}
+            />
+            <meta property="og:image:alt" content={`صورة عن ${article.title}`} />
+            <meta property="og:image:type" content="image/jpeg" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+
+            {/* Twitter Card */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={article.title} />
+            <meta name="twitter:description" content={article.content.slice(0, 150)} />
+            <meta
+              name="twitter:image"
+              content={article.image?.startsWith("http") ? article.image : `${baseUrl}/uploads/${article.image || "default.jpg"}`}
+            />
+          </Head>
 
 
       <Header />

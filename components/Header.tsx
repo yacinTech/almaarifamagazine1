@@ -83,11 +83,11 @@ const styles = {
     alignItems: "center",
     backgroundColor: "#1e40af",
     padding: "10px 20px",
-    position: "sticky" as const,
+    position: "sticky",
     top: 0,
     zIndex: 1000,
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-    direction: "rtl" as "rtl",
+    direction: "rtl" as const,
   },
   logoContainer: {
     display: "flex",
@@ -144,7 +144,7 @@ const styles = {
     gap: "15px",
   },
   mobileNav: {
-    position: "absolute" as const,
+    position: "absolute",
     top: "70px",
     right: "20px",
     backgroundColor: "#1e40af",

@@ -42,6 +42,8 @@ export default function ArticlePage({ article }: Props) {
         <title>{article.title}</title>
         <meta name="description" content={article.content.slice(0, 150)} />
 
+        <meta name="google-site-verification" content="O1netl10RwInIUmxF8lpN1qqE7cBow_ZJjDSodqR110" />
+
         {/* Open Graph meta tags */}
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.content.slice(0, 150)} />

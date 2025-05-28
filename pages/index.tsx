@@ -57,16 +57,20 @@ export default function Home() {
         <meta name="description" content="أحدث المقالات من جميع التصنيفات" />
         <meta name="google-site-verification" content="O1netl10RwInIUmxF8lpN1qqE7cBow_ZJjDSodqR110" />
 
-
-        <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DL40NN5MDP"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-DL40NN5MDP');
-      </script>
+         <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-DL40NN5MDP', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
 
 
      

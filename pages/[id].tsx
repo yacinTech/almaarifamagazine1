@@ -61,16 +61,7 @@ export default function ArticlePage({ article }: Props) {
         <meta name="twitter:description" content={article.content.slice(0, 150)} />
         <meta name="twitter:image" content={imageUrl} />
 
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BG1PE488V6"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-BG1PE488V6');
-        </script>
-
+       
 
 
 

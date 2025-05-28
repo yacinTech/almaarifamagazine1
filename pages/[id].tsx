@@ -64,9 +64,9 @@ export default function ArticlePage({ article }: Props) {
 
        
         <Script
-  strategy="afterInteractive"
-  src="https://www.googletagmanager.com/gtag/js?id=G-DL40NN5MDP"
-/>
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-DL40NN5MDP"
+        />
         <Script
           id="gtag-init"
           strategy="afterInteractive"

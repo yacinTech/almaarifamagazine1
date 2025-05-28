@@ -58,19 +58,24 @@ export default function Home() {
         <meta name="google-site-verification" content="O1netl10RwInIUmxF8lpN1qqE7cBow_ZJjDSodqR110" />
 
          <Script
-          id="gtag-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-DL40NN5MDP', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=G-DL40NN5MDP"
+          />
+          <Script
+            id="gtag-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-DL40NN5MDP', {
+                  page_path: window.location.pathname,
+                });
+              `,
+            }}
+          />
+
 
 
      

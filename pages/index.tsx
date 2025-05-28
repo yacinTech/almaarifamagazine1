@@ -54,6 +54,7 @@ export default function Home() {
       <Head>
         <title>مجلة المعرفة - الصفحة الرئيسية</title>
         <meta name="description" content="أحدث المقالات من جميع التصنيفات" />
+        <meta name="google-site-verification" content="O1netl10RwInIUmxF8lpN1qqE7cBow_ZJjDSodqR110" />
       </Head>
 
       <Header />

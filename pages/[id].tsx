@@ -25,7 +25,7 @@ export default function ArticlePage({ article }: Props) {
   const baseUrl =
     typeof window !== "undefined"
       ? window.location.origin
-      : process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+      : process.env.NEXT_PUBLIC_BASE_URL || "https://almaarifamagazine.vercel.app/";
 
   const shareUrl = `${baseUrl}/${article._id}`;
   const imageUrl = article.image || `${baseUrl}/default.jpg`;

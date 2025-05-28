@@ -55,6 +55,17 @@ export default function Home() {
         <title>مجلة المعرفة - الصفحة الرئيسية</title>
         <meta name="description" content="أحدث المقالات من جميع التصنيفات" />
         <meta name="google-site-verification" content="O1netl10RwInIUmxF8lpN1qqE7cBow_ZJjDSodqR110" />
+
+
+       
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DL40NN5MDP"></script>
+       <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-DL40NN5MDP');
+        </script>
       </Head>
 
       <Header />

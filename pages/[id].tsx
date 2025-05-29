@@ -62,25 +62,6 @@ export default function ArticlePage({ article }: Props) {
         <meta name="twitter:description" content={article.content.slice(0, 150)} />
         <meta name="twitter:image" content={imageUrl} />
 
-       
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-DL40NN5MDP"
-        />
-        <Script
-          id="gtag-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-DL40NN5MDP', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
 
 
 

@@ -3,7 +3,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import { fetchArticleById } from "../lib/api";
 import { FaTwitter, FaFacebookF, FaWhatsapp } from "react-icons/fa";
-import Script from "next/script";
+
 
 type Article = {
   _id: string;

@@ -27,6 +27,9 @@ export default function Home() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const imageUrl = 'https://almaarifamagazine.vercel.app/logo.png';
+  const shareUrl = 'https://almaarifamagazine.vercel.app/';
+
   // Get category filter from query param
   const categoryFilter = typeof router.query.category === "string" ? router.query.category : null;
 
@@ -52,12 +55,32 @@ export default function Home() {
     loadArticles();
   }, [categoryFilter]);
 
+
+  
+
   return (
     <>
       <Head>
         <title>مجلة المعرفة - الصفحة الرئيسية</title>
-        <meta name="description" content="أحدث المقالات من جميع التصنيفات" />
+        <meta name="description" content="منصة رقمية تقدم محتوى متنوعًا في مجالات الآداب، الفنون، العلوم الاجتماعية، الفلسفة، التكنولوجيا، والصحة، بمساهمات من نخبة الكتاب والباحثين." />
         <meta name="google-site-verification" content="O1netl10RwInIUmxF8lpN1qqE7cBow_ZJjDSodqR110" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={shareUrl} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:alt" content="غلاف مجلة المعرفة" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="مجلة المعرفة - الصفحة الرئيسية" />
+        <meta name="twitter:description" content="منصة رقمية تقدم محتوى متنوعًا في مجالات الآداب، الفنون، العلوم الاجتماعية، الفلسفة، التكنولوجيا، والصحة، بمساهمات من نخبة الكتاب والباحثين." />
+        <meta name="twitter:image" content={imageUrl} />
+
+
+        
 
 
         

@@ -5,8 +5,6 @@ import { fetchAllArticles } from "../lib/api";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Script from "next/script";
-import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 // داخل JSX
@@ -29,6 +27,9 @@ export default function Home() {
 
   const imageUrl = 'https://almaarifamagazine.vercel.app/cover.png';
   const shareUrl = 'https://almaarifamagazine.vercel.app/';
+
+  const canonicalUrl = (`https://almaarifamagazine.vercel.app` + router.asPath).split('?')[0];
+
 
   // Get category filter from query param
   const categoryFilter = typeof router.query.category === "string" ? router.query.category : null;
@@ -83,6 +84,10 @@ export default function Home() {
         <meta name="twitter:title" content="مجلة المعرفة - الصفحة الرئيسية" />
         <meta name="twitter:description" content="منصة رقمية تقدم محتوى متنوعًا في مجالات الآداب، الفنون، العلوم الاجتماعية، الفلسفة، التكنولوجيا، والصحة، بمساهمات من نخبة الكتاب والباحثين." />
         <meta name="twitter:image" content={imageUrl} />
+
+
+
+        <link rel="canonical" href={canonicalUrl} />
 
 
         

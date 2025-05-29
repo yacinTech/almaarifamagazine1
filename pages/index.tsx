@@ -83,7 +83,7 @@ export default function Home() {
                   style={{ width: "100%", height: 180, objectFit: "cover" }}
                 />
               )}
-              <h2>{article.title}</h2>
+              <h1>{article.title}</h1>
               <p>{article.content.slice(0, 120)}...</p>
               <p style={{ fontStyle: "italic", color: "#555" }}>{article.category}</p>
               

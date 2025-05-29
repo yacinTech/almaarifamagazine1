@@ -27,7 +27,7 @@ export default function Home() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const imageUrl = 'https://almaarifamagazine.vercel.app/logo.png';
+  const imageUrl = 'https://almaarifamagazine.vercel.app/cover.png';
   const shareUrl = 'https://almaarifamagazine.vercel.app/';
 
   // Get category filter from query param

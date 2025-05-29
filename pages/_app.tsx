@@ -15,6 +15,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
+            console.log('Initializing GA...');
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());

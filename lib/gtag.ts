@@ -1,3 +1,10 @@
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
+
 // lib/gtag.ts
 export const GA_MEASUREMENT_ID = 'G-DL40NN5MDP'; // ضع ID الخاص بك هنا
 

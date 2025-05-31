@@ -38,7 +38,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="afaqacadimie@gmail.com" style={{ textDecoration: "none", color: "#333", display: "flex", alignItems: "center" }}>
+              <a href="mailto:afaqacadimie@gmail.com" style={{ textDecoration: "none", color: "#333", display: "flex", alignItems: "center" }}>
                 <FaEnvelope style={{ marginLeft: 8 }} /> afaqacadimie@gmail.com
               </a>
             </li>

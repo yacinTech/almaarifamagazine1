@@ -39,7 +39,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="afaqacadimie@gmail.com" style={{ textDecoration: "none", color: "#333", display: "flex", alignItems: "center" }}>
-                <FaEnvelope style={{ marginLeft: 8 }} /> info@almaarifamagazine.com
+                <FaEnvelope style={{ marginLeft: 8 }} /> afaqacadimie@gmail.com
               </a>
             </li>
           </ul>

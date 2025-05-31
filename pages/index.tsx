@@ -59,17 +59,17 @@ export default function Home() {
     <>
       <Head>
         <title>مجلة المعرفة - الصفحة الرئيسية</title>
-        <meta name="description" content="منصة رقمية تقدم محتوى متنوعًا..." />
+        <meta name="description" content="منصة رقمية تقدم محتوى متنوعًا في مجالات الآداب، الفنون، العلوم الاجتماعية، الفلسفة، التكنولوجيا، والصحة، بمساهمات من نخبة الكتاب والباحثين" />
         <meta name="google-site-verification" content="O1netl10RwInIUmxF8lpN1qqE7cBow_ZJjDSodqR110" />
         <meta property="og:title" content="مجلة المعرفة - الصفحة الرئيسية" />
-        <meta property="og:description" content="منصة رقمية تقدم محتوى متنوعًا..." />
+        <meta property="og:description" content="منصة رقمية تقدم محتوى متنوعًا في مجالات الآداب، الفنون، العلوم الاجتماعية، الفلسفة، التكنولوجيا، والصحة، بمساهمات من نخبة الكتاب والباحثين" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={shareUrl} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:image:alt" content="غلاف مجلة المعرفة" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="مجلة المعرفة - الصفحة الرئيسية" />
-        <meta name="twitter:description" content="منصة رقمية تقدم محتوى متنوعًا..." />
+        <meta name="twitter:description" content="منصة رقمية تقدم محتوى متنوعًا في مجالات الآداب، الفنون، العلوم الاجتماعية، الفلسفة، التكنولوجيا، والصحة، بمساهمات من نخبة الكتاب والباحثين" />
         <meta name="twitter:image" content={imageUrl} />
         <link rel="canonical" href={canonicalUrl} />
       </Head>

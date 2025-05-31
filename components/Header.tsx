@@ -11,7 +11,6 @@ const categories = [
   "العلوم الاجتماعية",
   "فكر وفلسفة",
   "علوم وتكنولوجيا",
-  "الصحة",
   "السياسة",
   "منوعات",
   "كتاب وآراء"
@@ -155,7 +154,7 @@ const styles = {
   desktopNav: {
     display: "flex",
     alignItems: "center",
-    gap: "15px",
+    gap: "10px",
   },
   mobileNav: {
     position: "absolute" as const,

@@ -3,6 +3,8 @@ import Head from "next/head";
 import Header from "../components/Header";
 import { fetchArticleById } from "../lib/api";
 import { FaTwitter, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import Footer from "../components/Footer";
+
 
 
 type Article = {
@@ -145,6 +147,10 @@ export default function ArticlePage({ article }: Props) {
           </a>
         </div>
       </article>
+      <Footer />
+
+
+      
     </>
   );
 }

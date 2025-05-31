@@ -12,10 +12,9 @@ const categories = [
   "فكر وفلسفة",
   "علوم وتكنولوجيا",
   "الصحة",
-  "كتاب وآراء",
-  "تواصل معنا",
-  "نبذة",
-  "سياسة الاستخدام",
+  "السياسة",
+  "منوعات",
+  "كتاب وآراء"
 ];
 
 export default function Header() {
@@ -40,7 +39,7 @@ export default function Header() {
       <div style={styles.logoContainer}>
         <Link href="/" legacyBehavior>
           <a style={styles.logoLink}>
-            <img src="/logo.png" alt="Logo" style={styles.logoImage} />
+            <img src="logo.png" alt="Logo" style={styles.logoImage} />
             مجلة المعرفة
           </a>
         </Link>
@@ -94,11 +93,26 @@ const styles = {
     alignItems: "center",
   },
   logoLink: {
-    display: "flex",
-    alignItems: "center",
-    color: "#fff",
-    textDecoration: "none",
+  display: "flex",
+  alignItems: "center",
+  gap: "10px",               // مسافة بين الشعار والنص
+  color: "#fff",
+  textDecoration: "none",
+  fontWeight: "700",          // خط عريض
+  fontSize: "1.6rem",         // حجم خط أكبر قليلاً
+  fontFamily: "'Tajawal', sans-serif", // خط عربي أنيق
+  textShadow: "1px 1px 4px rgba(0,0,0,0.6)", // ظل خفيف للنص لتمييزه على الخلفية
+  transition: "color 0.3s ease",
+  cursor: "pointer",
+  userSelect: "none",
+
+  // تأثير عند المرور بالفأرة (hover)
+  ":hover": {
+    color: "#ffd700",           // لون ذهبي جميل عند التمرير
+    textShadow: "2px 2px 6px rgba(255, 215, 0, 0.8)",
   },
+},
+
   logoImage: {
     height: 40,
     marginRight: 10,

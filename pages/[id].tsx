@@ -43,6 +43,7 @@ export default function ArticlePage({ article }: Props) {
     <>
       <Head>
         <title>{article.title}</title>
+        <link rel="icon" href="/logo.png" />
         <meta name="description" content={article.content.slice(0, 150)} />
 
         <meta name="google-site-verification" content="O1netl10RwInIUmxF8lpN1qqE7cBow_ZJjDSodqR110" />

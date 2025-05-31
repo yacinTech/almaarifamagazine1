@@ -59,6 +59,7 @@ export default function Home() {
     <>
       <Head>
         <title>مجلة المعرفة - الصفحة الرئيسية</title>
+        <link rel="icon" href="/logo.png" />
         <meta name="description" content="منصة رقمية تقدم محتوى متنوعًا في مجالات الآداب، الفنون، العلوم الاجتماعية، الفلسفة، التكنولوجيا، والصحة، بمساهمات من نخبة الكتاب والباحثين" />
         <meta name="google-site-verification" content="O1netl10RwInIUmxF8lpN1qqE7cBow_ZJjDSodqR110" />
         <meta property="og:title" content="مجلة المعرفة - الصفحة الرئيسية" />

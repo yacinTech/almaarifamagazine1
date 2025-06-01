@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ar" dir="rtl">
         <Head />
-        <meta name="google-adsense-account" content="ca-pub-4295602876718090">
+        <meta name="google-adsense-account" content="ca-pub-4295602876718090" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4295602876718090"
      crossOrigin="anonymous"></script>
         <body>

@@ -6,6 +6,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ar" dir="rtl">
         <Head />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4295602876718090"
+     crossOrigin="anonymous"></script>
         <body>
           {/* Google Tag Manager (noscript) */}
           <noscript>

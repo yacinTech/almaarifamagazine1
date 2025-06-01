@@ -72,7 +72,7 @@ export default function ArticlePage({ article }: Props) {
       </Head>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4295602876718090"
      crossOrigin="anonymous"></script>
-     
+
 {/* anonce 1 */}
 
       <ins className="adsbygoogle"
@@ -163,6 +163,24 @@ export default function ArticlePage({ article }: Props) {
           </a>
         </div>
       </article>
+
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4295602876718090"
+      crossOrigin="anonymous"></script>
+
+      <ins className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-4295602876718090"
+          data-ad-slot="2110877144"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+
+
+
       <Footer />
 
 

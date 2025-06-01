@@ -117,6 +117,9 @@ export default function Home() {
                     (e.currentTarget as HTMLElement).style.backgroundColor = "#0070f3";
                     (e.currentTarget as HTMLElement).style.transform = "scale(1)";
                   }}
+
+                  
+
                 >
                   اقرأ المزيد
                 </a>

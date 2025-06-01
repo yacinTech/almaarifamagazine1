@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import { fetchArticleById } from "../lib/api";
 import { FaTwitter, FaFacebookF, FaWhatsapp } from "react-icons/fa";
 import Footer from "../components/Footer";
-
+import Script from 'next/script';
 
 
 type Article = {
@@ -70,6 +70,20 @@ export default function ArticlePage({ article }: Props) {
 
 
       </Head>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4295602876718090"
+     crossOrigin="anonymous"></script>
+     
+{/* anonce 1 */}
+
+      <ins className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-4295602876718090"
+          data-ad-slot="2278398104"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>        
 
       <Header />
 

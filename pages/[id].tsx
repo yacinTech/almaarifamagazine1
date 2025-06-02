@@ -70,6 +70,10 @@ export default function ArticlePage({ article }: Props) {
 
 
       </Head>
+
+      {/* anonce 1 */}
+      {/*
+
           <Script
               id="adsbygoogle-init"
               strategy="afterInteractive"
@@ -79,9 +83,7 @@ export default function ArticlePage({ article }: Props) {
             />
 
 
-      {/* anonce 1 */}
-      {/*
-
+      
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
@@ -179,6 +181,9 @@ export default function ArticlePage({ article }: Props) {
       </article>
 
 
+      {/* anonce 2 */}
+
+        {/*
           <Script
               id="adsbygoogle-init-bottom"
               strategy="afterInteractive"
@@ -187,11 +192,6 @@ export default function ArticlePage({ article }: Props) {
               crossOrigin="anonymous"
             />
 
-
-
-        {/* anonce 2 */}
-
-        {/*
 
         <ins
           className="adsbygoogle"

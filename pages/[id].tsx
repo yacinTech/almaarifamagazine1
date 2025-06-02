@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import { fetchArticleById } from "../lib/api";
 import { FaTwitter, FaFacebookF, FaWhatsapp } from "react-icons/fa";
 import Footer from "../components/Footer";
-import Script from 'next/script';
+import { fetchRelatedArticles } from "../lib/api";
 
 
 type Article = {
@@ -18,9 +18,11 @@ type Article = {
 
 type Props = {
   article: Article | null;
+  relatedArticles: Article[];
 };
 
-export default function ArticlePage({ article }: Props) {
+
+export default function ArticlePage({ article, relatedArticles  }: Props) {
   if (!article) {
     return <p style={{ textAlign: "center", marginTop: 40 }}>لم يتم العثور على المقال.</p>;
   }
@@ -180,6 +182,25 @@ export default function ArticlePage({ article }: Props) {
         </div>
       </article>
 
+      <h2 style={{ marginTop: 50, fontSize: "1.5rem", fontWeight: "bold" }}>مواضيع ذات صلة</h2>
+<div style={{ display: "grid", gap: 20, gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", marginTop: 20 }}>
+  {relatedArticles.map((rel) => (
+    <a key={rel._id} href={`/${rel._id}`} style={{ textDecoration: "none", color: "inherit" }}>
+      <div style={{ border: "1px solid #ccc", borderRadius: 8, padding: 10, height: "100%", background: "#fafafa" }}>
+        {rel.image && (
+          <img src={rel.image} alt={rel.title} style={{ width: "100%", height: 120, objectFit: "cover", borderRadius: 5 }} />
+        )}
+        <h3 style={{ fontSize: "1rem", marginTop: 10 }}>{rel.title}</h3>
+      </div>
+    </a>
+  ))}
+</div>
+
+
+      
+
+
+
 
       {/* anonce 2 */}
 
@@ -220,17 +241,26 @@ export default function ArticlePage({ article }: Props) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { id } = context.params!;
+  const id = context.params?.id;
+
+  if (!id || Array.isArray(id)) {
+    return { notFound: true };
+  }
 
   try {
-    const article = await fetchArticleById(id as string);
-    if (!article) {
-      return { notFound: true };
-    }
+    const article = await fetchArticleById(id);
+    if (!article) return { notFound: true };
+
+    const relatedArticles = await fetchRelatedArticles(article.category, article._id);
+
     return {
-      props: { article },
+      props: {
+        article,
+        relatedArticles, // ترسل للمكون الرئيسي
+      },
     };
   } catch (error) {
     return { notFound: true };
   }
 };
+

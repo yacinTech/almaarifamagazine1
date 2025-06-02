@@ -80,6 +80,7 @@ export default function ArticlePage({ article }: Props) {
 
 
       {/* anonce 1 */}
+      {/*
 
       <ins
         className="adsbygoogle"
@@ -89,10 +90,13 @@ export default function ArticlePage({ article }: Props) {
         data-ad-format="auto"
         data-full-width-responsive="true"
       />
+     
 
       <Script id="adsbygoogle-fill" strategy="afterInteractive">
         {`(adsbygoogle = window.adsbygoogle || []).push({});`}
       </Script>
+
+       */}
        
 
       <Header />
@@ -183,6 +187,12 @@ export default function ArticlePage({ article }: Props) {
               crossOrigin="anonymous"
             />
 
+
+
+        {/* anonce 2 */}
+
+        {/*
+
         <ins
           className="adsbygoogle"
           style={{ display: "block" }}
@@ -191,10 +201,13 @@ export default function ArticlePage({ article }: Props) {
           data-ad-format="auto"
           data-full-width-responsive="true"
         />
+       
 
         <Script id="adsbygoogle-fill-bottom" strategy="afterInteractive">
           {`(adsbygoogle = window.adsbygoogle || []).push({});`}
         </Script>
+
+         */}
 
 
 

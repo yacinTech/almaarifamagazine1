@@ -17,7 +17,7 @@ export async function fetchArticleById(id: string) {
 
 // مثال: جلب مقالات من نفس التصنيف، باستثناء المقال الحالي
 export async function fetchRelatedArticles(category: string, currentId: string) {
-  const res = await fetch(`https://fitness-magazine-backend-1.onrender.com/api/articles/${category}`);
+  const res = await fetch(`https://fitness-magazine-backend-1.onrender.com/api/articles/category/${category}`);
   const all = await res.json();
 
   // استبعاد المقال الحالي واختيار 4 عشوائيًا

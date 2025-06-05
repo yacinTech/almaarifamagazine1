@@ -4,7 +4,6 @@ import { Menu, X, Search } from "lucide-react";
 
 const categories = [
   "آداب وفنون",
-  "العلوم الاجتماعية",
   "فكر وفلسفة",
   "علوم وتكنولوجيا",
   "المجتمع والسياسة",

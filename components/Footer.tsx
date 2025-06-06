@@ -1,9 +1,11 @@
 // components/Footer.tsx
 import { FaFacebookF, FaInstagram, FaEnvelope } from "react-icons/fa";
+import NewsletterForm from "../components/NewsletterForm";
 
 export default function Footer() {
   return (
     <footer
+      
       style={{
         backgroundColor: "#f2f2f2",
         padding: "40px 20px",
@@ -13,6 +15,7 @@ export default function Footer() {
         direction: "rtl",
       }}
     >
+       <NewsletterForm />
       <div style={{ maxWidth: 1000, margin: "0 auto", display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: 20 }}>
         
         {/* About & Links */}

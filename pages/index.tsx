@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Footer from "../components/Footer";
 
+
 type Article = {
   _id: string;
   title: string;
@@ -78,7 +79,7 @@ export default function Home() {
       <Header />
 
       <main style={{ padding: "20px" }}>
-        {loading && <p>جاري التحميل...</p>}
+        {loading && <p> جاري التحميل...</p>}
         {!loading && articles.length === 0 && <p>لا توجد مقالات.</p>}
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))", gap: 20 }}>
@@ -146,10 +147,14 @@ export default function Home() {
             </button>
           </div>
         )}
+
+      
       </main>
+      
 
       {/* الفوتر أسفل زر التحميل فقط */}
       <div style={{ marginTop: 50 }}>
+       
         <Footer />
       </div>
     </>

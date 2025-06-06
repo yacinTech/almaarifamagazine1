@@ -61,7 +61,7 @@ export default function Footer() {
       <hr style={{ margin: "30px auto", borderColor: "#ccc", maxWidth: 1000 }} />
 
       <div style={{ textAlign: "center", color: "#777", fontSize: "0.9rem" }}>
-        © {new Date().getFullYear()} المجلة المعرفية - جميع الحقوق محفوظة
+        © {new Date().getFullYear()} مجلة المعرفة - جميع الحقوق محفوظة
       </div>
     </footer>
   );

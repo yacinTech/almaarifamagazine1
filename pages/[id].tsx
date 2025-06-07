@@ -195,13 +195,6 @@ export default function ArticlePage({ article, relatedArticles  }: Props) {
     </a>
   ))}
 </div>
-
-
-      
-
-
-
-
       {/* anonce 2 */}
 
         {/*
@@ -212,9 +205,7 @@ export default function ArticlePage({ article, relatedArticles  }: Props) {
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4295602876718090"
               crossOrigin="anonymous"
             />
-
-
-        <ins
+       <ins
           className="adsbygoogle"
           style={{ display: "block" }}
           data-ad-client="ca-pub-4295602876718090"
@@ -222,20 +213,12 @@ export default function ArticlePage({ article, relatedArticles  }: Props) {
           data-ad-format="auto"
           data-full-width-responsive="true"
         />
-       
-
         <Script id="adsbygoogle-fill-bottom" strategy="afterInteractive">
           {`(adsbygoogle = window.adsbygoogle || []).push({});`}
         </Script>
 
          */}
-
-
-
       <Footer />
-
-
-      
     </>
   );
 }

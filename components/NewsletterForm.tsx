@@ -38,7 +38,7 @@ const NewsletterForm = () => {
 
   return (
     <div style={styles.container}>
-      <h3 style={styles.title}> اشترك في النشرة البريدية للتوصل بالمقالات</h3>
+      <h3 style={styles.title}>  اشترك في النشرة البريدية للتوصل بالمقالات الحصرية</h3>
       <form onSubmit={handleSubmit} style={styles.form}>
         <input
           type="text"

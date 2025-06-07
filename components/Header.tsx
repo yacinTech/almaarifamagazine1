@@ -164,12 +164,22 @@ const styles = {
     height: 40,
     marginRight: 10,
   },
-  menuButton: {
-    background: "none",
-    border: "none",
-    cursor: "pointer",
-    padding: 8,
-  },
+menuButton: {
+  backgroundColor: "#1e40af",
+  border: "none",
+  padding: "10px",
+  borderRadius: "12px",
+  cursor: "pointer",
+  boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+  transition: "background-color 0.3s ease",
+},
+
+// عند التحويم مثلاً
+menuButtonHover: {
+  backgroundColor: "#2563eb", // لون أفتح عند المرور
+},
+
+  
   navList: {
     display: "flex",
     listStyle: "none",
@@ -204,15 +214,26 @@ const styles = {
     alignItems: "center",
     gap: "10px",
   },
-  mobileNav: {
-    position: "absolute" as const,
-    top: "70px",
-    right: "20px",
-    backgroundColor: "#1e40af",
-    borderRadius: "10px",
-    padding: "15px",
-    boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-  },
+mobileNav: {
+  position: "absolute" as const,
+  top: "60px", // مباشرة تحت زر القائمة
+  right: "15px",
+  left: "15px",
+  backgroundColor: "rgba(7, 40, 94, 0.7)", // لون داكن شبه شفاف
+  borderRadius: "16px",
+  padding: "20px",
+  boxShadow: "0 12px 30px rgba(0, 0, 0, 0.1)", // ظل ثقيل
+  backdropFilter: "blur(12px)", // تأثير ضبابي خلف العنصر
+  WebkitBackdropFilter: "blur(12px)", // دعم Safari
+
+  // أنيميشن فتح ثقيل وجذاب
+  opacity: 1,
+  transform: "scale(1) translateY(1)",
+  transition: "all 1.5s cubic-bezier(5.22, 7, 1.36, 3)",
+
+  zIndex: 1000,
+},
+
   searchContainer: {
     position: "relative",
     marginRight: "15px",

@@ -234,57 +234,69 @@ mobileNav: {
   zIndex: 1000,
 },
 
-  searchContainer: {
+ searchContainer: {
     position: "relative",
-    marginRight: "15px",
   },
+
   searchIcon: {
     background: "none",
     border: "none",
     cursor: "pointer",
-    padding: 8,
+    padding: "8px",
   },
+
   searchBox: {
-    position: "absolute" as const,
-    top: "40px",
+    position: "fixed",
+    top: "70px", // المسافة من أعلى الصفحة
     right: 0,
-    backgroundColor: "#fff",
-    padding: "10px",
-    borderRadius: "10px",
-    boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-    zIndex: 1001,
-    minWidth: "250px",
-    
-    
-    
- 
-  },  
+    width: "100vw",
+    maxWidth: "100vw",
+    background: "rgba(255, 255, 255, 0.95)",
+    backdropFilter: "blur(8px)", // ضبابية خلفية أنيقة
+    borderRadius: "0 0 16px 16px",
+    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+    padding: "20px",
+    zIndex: 9999,
+    boxSizing: "border-box",
+    transition: "all 0.3s ease-in-out", // حركة ناعمة
+  },
 
   searchInput: {
     width: "100%",
-    padding: "8px",
-    fontSize: "14px",
+    padding: "12px",
+    fontSize: "16px",
     border: "1px solid #ccc",
-    borderRadius: "5px",
-    marginBottom: "10px",
+    borderRadius: "10px",
+    marginBottom: "15px",
     direction: "rtl" as const,
+    boxSizing: "border-box",
+    outline: "none",
+    transition: "border-color 0.2s",
   },
+
   resultsList: {
     listStyle: "none",
     margin: 0,
     padding: 0,
-    maxHeight: "200px",
+    maxHeight: "250px",
     overflowY: "auto",
   },
+
   resultItem: {
-    marginBottom: "6px",
+    marginBottom: "10px",
   },
+
   resultLink: {
     textDecoration: "none",
     color: "#1e40af",
-    fontSize: "14px",
-    transition: "color 0.3s",
+    fontWeight: "bold",
+    backgroundColor: "#f0f4ff",
+    padding: "10px 12px",
+    borderRadius: "8px",
+    display: "block",
+    transition: "background-color 0.3s",
   },
-  
+
   
 } as const;
+
